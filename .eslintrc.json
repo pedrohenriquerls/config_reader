@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["jest"],
+  "extends": ["standard", "eslint:recommended", "airbnb"],
+  "env": {
+    "es6": true,
+    "browser": false,
+    "node": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "max-len": [1, 240, 2, { "ignoreComments": true, "ignoreStrings": true }],
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "import/no-cycle": 0,
+    "strict": 0,
+    "no-console": 0,
+    "no-debugger": 0,
+    "no-underscore-dangle": 0,
+    "no-param-reassign": 0,
+    "no-return-assign": 0,
+    "global-require": 0,
+    "prefer-destructuring": 0,
+    "no-lonely-if": 0,
+    "no-else-return": 0,
+    "no-unused-vars": 1,
+    "arrow-body-style": 0,
+    "semi": [2, "always"],
+    "comma-dangle": ["error", "only-multiline"],
+    "object-curly-newline": [2, { "consistent": true }],
+    "no-multiple-empty-lines": [2, { "max": 2, "maxBOF": 1}],
+    "quotes": [2, "single", "avoid-escape"],
+    "padded-blocks": [2, { "classes": "always" }],
+    "no-case-declarations": 0
+  }
+}

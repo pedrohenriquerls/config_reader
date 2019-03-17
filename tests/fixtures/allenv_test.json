@@ -1,0 +1,11 @@
+{
+  "test": {
+    "production": {
+      "c": "W"
+    },
+    "staging": {
+      "a": "J",
+      "w": "x"
+    }
+  }
+}
