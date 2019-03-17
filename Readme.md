@@ -8,9 +8,9 @@ The siteID usually 3-6 letter identifier, for example:
 - `forms_customer_bkit.yml` will be the `forms_customer` for config name to the site `bkit`
 
 ### How to use
-Before to fetch the configs is necessary to load the config data for this you need to call the function `loadConfigFromFiles`.
+Before to fetch the configs is necessary to load the config data for this you need to call the function `loadAllConfigsInFolder`.
 
-If you do not pass the folder of configs as a parameter to `loadConfigFromFiles` the files will be found in the path configured in the env `READER_CONFIG_FOLDER`, this function returns a promise.
+If you do not pass the folder of configs as a parameter to `loadAllConfigsInFolder` the files will be found in the path configured in the env `READER_CONFIG_FOLDER`, this function returns a promise.
 
 To fetch the configs you want you must call the `getConfig` function, this function receives three parameters `config name`, `siteId` and `environment`, the production key is used as default.
 
@@ -19,7 +19,7 @@ The data need to be load just one time.
 ##### Example:
 
 ```
-loadConfigFromFiles('./config_files_folder').then(() => {
+loadAllConfigsInFolder('./config_files_folder').then(() => {
   console.log(getConfig('forms_customer', 'bkit', 'staging'));
 });
 ```
