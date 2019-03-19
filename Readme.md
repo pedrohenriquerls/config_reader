@@ -31,38 +31,26 @@ The production keys is used to fill the empty keys for other environments config
 
 ##### production config:
 ```
-"klarna": {
-            "ordersName": "klarna_checkout",
+"config": {
             "active": false,
-            "merchantId": "2468",
-            "sharedSecret": "ryckZqFxB75WQ3o",
-            "baseUri": "https://checkout.klarna.com",
-            "contentType": "application/vnd.klarna.checkout.aggregated-order-v2+json",
-            "fetchUri": "/checkout/orders/",
-            "confirmationUri": "/checkout/klarna/confirmation.html",
-            "pushUri": "/checkout/klarna/confirm/klarnacheckout?klarna_order={checkout.order.uri}"
+            "number": "123",
+            "baseUri": "https://productionurl.com",
         }
 ```
 ##### development config:
 ```
 "development": {
-        "klarna": {
-            "baseUri": "https://checkout.testdrive.klarna.com"
+        "config": {
+            "baseUri": "https://test.com"
         }
     }
 ```
 ##### result config:
 ```
-"klarna": {
-            "ordersName": "klarna_checkout",
+"config": {
             "active": false,
-            "merchantId": "2468",
-            "sharedSecret": "ryckZqFxB75WQ3o",
-            "baseUri": "https://checkout.testdrive.klarna.com",
-            "contentType": "application/vnd.klarna.checkout.aggregated-order-v2+json",
-            "fetchUri": "/checkout/orders/",
-            "confirmationUri": "/checkout/klarna/confirmation.html",
-            "pushUri": "/checkout/klarna/confirm/klarnacheckout?klarna_order={checkout.order.uri}"
+            "number": "123",
+            "baseUri": "https://test.com",
         }
 ```
 
@@ -71,64 +59,46 @@ For configs in an array the objects will be merged with the more similar config 
 
 ##### default config:
 
-```
-    customerData:
-      - type: gender
-        name: gender
-        label: form_label_gender
-        required: true
-        tabIndex: 1
+``
+    listConfig:
+      - type: String
+        name: potato
+        label: vegetable
+        fry: true
+        amount: 5
 
-      - type: text
-        name: firstName
-        label: form_label_first_name
-        required: true
-        tabIndex: 2
-        constraints:
-          - type: Length
-            min: 2
-            minMessage: form_firstname_error
-```
+      - type: String
+        name: strawberry
+        label: fruit
+        sweet: false
 
 ##### Site config:
 
 ```
-    customerData:
-      - type: gender
-        name: gender
-        label: form_label_gender
+    listConfig:
+      - type: String
+        name: potato
 
-      - type: text
-        name: firstName
-        label: form_label_first_name
-        required: false
-        tabIndex: 2
-        constraints:
-          - type: Pattern
-            pattern: '^[A-Z]{2,20}$'
-            message: test
+      - type: String
+        name: strawberry
+        label: fruit
+        sweet: true
+        amount: 100
 ```
 
 ##### The result will be:
 
 ```
-    customerData:
-      - type: gender
-        name: gender
-        label: form_label_gender
-        required: true
-        tabIndex: 1
+    listConfig:
+      - type: String
+        name: potato
+        label: vegetable
+        fry: true
+        amount: 5
 
-      - type: text
-        name: firstName
-        label: form_label_first_name
-        required: false
-        tabIndex: 2
-        constraints:
-          - type: Pattern
-            pattern: '^[A-Z]{2,20}$'
-            message: test
-         - type: Length
-            min: 2
-            minMessage: form_firstname_error
+      - type: String
+        name: strawberry
+        label: fruit
+        sweet: true
+        amount: 100
 ```
